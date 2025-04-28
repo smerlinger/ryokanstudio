@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ryokan Studio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="">
+    <header>
+        <nav>
+            <div class="logo">
+                 <a href="/">
+                    <img src="images/logo.png" alt="Ryokan Studio Logo">
+                 </a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="max-w-3xl mx-auto px-5 py-10">
+        <section class="intro-section">
+            <h1 class="text-4xl font-bold mb-4 leading-tight">An internet company development studio.</h1>
+            <button id="begin-button" class="
+                begin-btn /* Keep existing JS hooks if needed, or integrate into Tailwind classes */
+                inline-block px-8 py-3 /* Padding */
+                bg-emerald-500 text-gray-900 /* Colors: Emerald bg, dark text */
+                rounded-md font-semibold /* Rounded corners, bold font */
+                mt-6 mb-6 /* Margins */
+                transition-all duration-300 ease-in-out /* Smooth transition */
+                hover:bg-emerald-600 /* Darker green on hover */
+                overflow-hidden /* Keep for collapse transition */
+            ">
+                <!-- Replaced text with SVG Icon -->
+                <!-- Arrow Right Icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="inline-block" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/>
+                  </svg>
+            </button>
+            <p id="intro-paragraph" class="initially-hidden"> Everyone is an artist. We build to craft art through code, commerce, and community. </p>
+            <!-- Added Reveal Button -->
+            <button id="reveal-button" class="begin-btn hidden">
+                <!-- Arrow Right Icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="inline-block" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/>
+                </svg>
+            </button>
+        </section>
+
+        <div id="main-content-wrapper" class="blur-content">
+            <section id="work" class="projects-section">
+                <h2>What We're Working On...</h2>
+                
+                <div class="project-item">
+                    <h3>Project Alpha</h3>
+                    <p>A brief description of Project Alpha, focusing on its core idea or technology. Clean, modern, efficient.</p>
+                </div>
+
+                <div class="project-item">
+                    <h3>Service Beta</h3>
+                    <p>Describing Service Beta, highlighting its unique value proposition or the problem it solves. User-centric design.</p>
+                </div>
+
+                <div class="project-item">
+                    <h3>Tool Gamma</h3>
+                    <p>Information about Tool Gamma, maybe focusing on its utility or the innovation behind it. Built for scale.</p>
+                </div>
+            </section>
+
+            <section id="services" class="services-section">
+                <h2>How We Can Help...</h2>
+                
+                <div class="service-item">
+                    <h3>Strategic Development</h3>
+                    <p>From concept to launch, we partner with founders to build robust digital products and platforms.</p>
+                </div>
+
+                <div class="service-item">
+                    <h3>Growth & Scaling</h3>
+                    <p>Leveraging technology and data-driven insights to scale operations and reach new markets.</p>
+                </div>
+                
+                <div class="service-item">
+                    <h3>Consultation</h3>
+                     <p>Providing expert guidance on technology strategy, product development, and digital transformation.</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">Ryokan Studio</div>
+            <div class="footer-links">
+                <ul>
+                    <li><a href="#work">Work</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="mailto:hello@ryokanstudio.com">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js?v=12345"></script>
+</body>
+</html> 

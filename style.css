@@ -1,0 +1,431 @@
+:root {
+    --primary-color: #ffffff; /* White (for headings etc. on dark bg) */
+    --secondary-color: #a0a0a0; /* Light Gray (for secondary text) */
+    --text-color: #ffffff; /* White (for main body text) */
+    --bg-color: #1a1a1a; /* Dark Gray (from image) */
+    --light-gray: #333333; /* Darker shade for subtle elements on dark bg */
+    --border-color: #444444; /* Medium Gray for borders */
+    --container-width: 800px; /* Narrower container for minimalist look */
+    --base-font-size: 16px;
+}
+
+html {
+    scroll-behavior: smooth; /* Re-add smooth scroll via CSS */
+}
+
+body {
+    font-family: 'Lato', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.7; /* Slightly increased line-height */
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    margin: 0;
+    padding: 0;
+    font-size: var(--base-font-size);
+    -webkit-font-smoothing: antialiased; /* Smoother fonts */
+    -moz-osx-font-smoothing: grayscale;
+    padding-top: 80px; /* Reduced top padding */
+}
+
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3, h4, h5, h6 { /* Apply to all headings */
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 1rem; /* Consistent bottom margin */
+    font-weight: 700; /* Lato bold weight */
+    line-height: 1.3;
+}
+
+h1 { font-size: 2.25rem; } /* Adjust sizes */
+h2 { font-size: 1.5rem; }
+h3 { font-size: 1.25rem; }
+h4 { font-size: 1.1rem; }
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: var(--secondary-color);
+    text-decoration: none; /* No underline on hover by default */
+}
+
+/* Remove previous button styles - we'll redefine later if needed */
+button.cta-button,
+button.cta-button.primary,
+button.cta-button.secondary {
+    all: unset; /* Reset button styles */
+    /* Add specific styles later if needed */
+}
+
+/* Header - Simplify drastically */
+header {
+    /* Make header fixed */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Ensure it stays on top */
+    background-color: var(--bg-color);
+    padding: 0.75rem 0; /* Keep reduced vertical padding */
+    border-bottom: 1px solid var(--border-color);
+}
+
+header nav {
+    /* Remove max-width and auto margin to make nav full width */
+    /* max-width: var(--container-width); */
+    /* margin: 0 auto; */
+    padding: 0 1.5rem; /* Adjust horizontal padding as needed */
+    display: flex;
+    justify-content: space-between; /* This will push logo left, other items right if added */
+    align-items: center;
+}
+
+.logo {
+    /* Logo is now part of the fixed header, no special position needed */
+    /* Adjust padding within the nav container if needed */
+    font-size: 1.25rem; /* Adjusted size */
+    font-weight: 600; /* Bolder */
+    color: var(--primary-color);
+}
+
+/* Style for the logo image */
+.logo img {
+    height: 50px; /* Reduced logo height */
+    width: auto; /* Maintain aspect ratio */
+    display: block; /* Remove extra space below image */
+}
+
+header nav ul {
+   display: none; /* Hide the old nav list for now */
+}
+
+header nav .cta-button {
+    display: none; /* Hide the old button for now */
+}
+
+/* Sections - General Reset */
+main section {
+    padding: 40px 20px; /* Reduced padding */
+    text-align: left; /* Default to left align */
+    border-bottom: 1px solid var(--border-color); /* Add separators */
+}
+
+main section:last-child {
+    border-bottom: none;
+}
+
+main section:nth-child(even) {
+    background-color: var(--bg-color); /* Remove alternating background */
+}
+
+/* Remove specific styles for old sections - we'll add new ones */
+.hero,
+.problem-section,
+.solution-section,
+.case-studies,
+.process-section,
+.pricing-section,
+.testimonials-section {
+    /* Resetting styles that might interfere */
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.hero h1,
+.problem-section h2,
+.solution-section h2,
+.case-studies h2,
+.process-section h2,
+.pricing-section h2,
+.testimonials-section h2 {
+    text-align: left; /* Ensure headings are left-aligned */
+}
+
+.hero p,
+.problem-section p,
+.solution-section p,
+.case-studies p,
+.process-section p,
+.pricing-section p,
+.testimonials-section p {
+    max-width: none; /* Remove max-width constraints */
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
+.problem-section .problem-points,
+.solution-section .solution-layers,
+.process-section .process-steps,
+.case-studies .studies-grid,
+.testimonials-section .testimonial-grid {
+    display: block; /* Stack elements vertically */
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.problem-section .problem-points > div,
+.solution-section .solution-layers > div,
+.process-section .process-steps > div,
+.study-card,
+.testimonial-card {
+    flex: none; /* Remove flex behavior */
+    max-width: 100%;
+    background: none; /* Remove background */
+    padding: 0; /* Remove padding */
+    margin-bottom: 1.5rem; /* Add space between stacked items */
+    border-radius: 0;
+    box-shadow: none; /* Remove shadow */
+}
+
+.hero .cta-button, .hero .secondary-link, /* Hide old hero buttons/links */
+.problem-section .cta-button,
+.process-section .cta-button,
+.pricing-section .cta-button {
+    display: none;
+}
+
+.hero .trusted-by {
+    margin-top: 2rem;
+}
+.hero .trusted-by .logos {
+    gap: 20px;
+}
+
+/* === New Section Styles === */
+
+.intro-section {
+    padding-bottom: 10px; /* Reduced bottom padding drastically */
+}
+
+.intro-section h1 {
+    font-size: 2rem; /* Slightly smaller H1 for intro */
+    margin-bottom: 0; /* Removed space below H1 */
+}
+
+.intro-section p {
+    font-size: 1.1rem;
+    color: var(--secondary-color); /* Use medium gray for intro text */
+    max-width: 65ch; /* Limit line length for readability */
+}
+
+.projects-section h2,
+.services-section h2 {
+    margin-bottom: 2rem; /* More space below section titles */
+}
+
+.projects-section {
+    padding-top: 1rem; /* Reduced padding-top to decrease space below intro */
+}
+
+.project-item,
+.service-item {
+    margin-bottom: 2.5rem; /* Space between items in a section */
+}
+
+.project-item:last-child,
+.service-item:last-child {
+    margin-bottom: 0; /* No bottom margin for the last item */
+}
+
+.project-item h3,
+.service-item h3 {
+    font-size: 1.15rem; /* Slightly smaller headings for items */
+    font-weight: 700; /* Lato bold */
+    margin-bottom: 0.5rem;
+}
+
+.project-item p,
+.service-item p {
+    color: var(--secondary-color); /* Medium gray for item descriptions */
+    line-height: 1.6;
+}
+
+/* === End New Section Styles === */
+
+/* Footer - Simplify */
+footer {
+    background-color: var(--bg-color);
+    color: var(--secondary-color); /* Lighter text color */
+    padding: 30px 0;
+    border-top: 1px solid var(--border-color);
+}
+
+.footer-content {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between; /* Keep logo and links separate */
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-logo {
+    font-size: 1.1rem; /* Smaller footer logo */
+    font-weight: 700; /* Lato bold */
+    color: var(--primary-color);
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px; /* Reduced gap */
+    flex-wrap: wrap;
+    justify-content: center; /* Center links if they wrap */
+}
+
+.footer-links h4 {
+    display: none; /* Hide footer section titles */
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Make links inline */
+    gap: 20px;
+}
+
+.footer-links ul li a {
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+}
+
+.footer-links ul li a:hover {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.footer-bottom {
+    display: none; /* Hide the old footer bottom */
+}
+
+/* Remove old responsive adjustments */
+@media (max-width: 768px) {
+    /* Keep font size adjustments */
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.4rem; }
+    h3 { font-size: 1.15rem; }
+
+    /* Adjust header/footer for smaller screens if needed */
+    header nav,
+    .footer-content {
+        flex-direction: column;
+        align-items: flex-start; /* Align items to start */
+        gap: 15px;
+    }
+
+    .footer-links {
+        justify-content: flex-start;
+    }
+    .footer-links ul {
+        flex-direction: column; /* Stack footer links */
+        gap: 10px;
+    }
+}
+
+/* Button Styling */
+.begin-btn {
+    display: inline-flex; /* Use flex to center icon easily */
+    align-items: center; /* Center icon vertically */
+    justify-content: center; /* Center icon horizontally */
+    padding: 5px 15px; /* Reduced top/bottom padding */
+    background-color: #00dfa0; /* Restore Green background */
+    color: #333333; /* Restore Dark Gray color for icon */
+    border: none;
+    border-radius: 8px; /* Curved rectangle edges */
+    cursor: pointer;
+    margin-top: 0.5rem; /* Reduced space below heading */
+    margin-bottom: 0.5rem; /* Reduced space above paragraph */
+    /* Updated transition */
+    transition: background-color 0.3s ease, opacity 0.5s ease, height 0.5s ease, margin 0.5s ease, padding 0.5s ease, transform 0.2s ease, width 0.5s ease;
+    overflow: hidden; /* Prevent content spill during transition */
+}
+
+.begin-btn:hover {
+    background-color: #00b88a; /* Darker green on hover */
+    transform: scale(1.05); /* Slight scale on hover */
+}
+
+/* General Hidden State */
+.hidden {
+    opacity: 0 !important; /* Use important to override potential conflicts */
+    pointer-events: none !important;
+    /* Make the element collapse vertically and horizontally */
+    height: 0 !important;
+    width: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+    overflow: hidden !important;
+}
+
+/* Initial state for paragraph */
+.initially-hidden {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    margin-top: 5px; /* Set precise 5px top margin */
+}
+
+.initially-hidden.visible {
+    opacity: 1;
+}
+
+/* Blur effect for main content */
+.blur-content {
+    filter: blur(8px); /* Adjust blur amount as needed */
+    transition: filter 1.5s ease-in-out; /* Slower blur transition */
+}
+
+/* Class to remove blur */
+.blur-content.unblurred {
+    filter: blur(0px);
+}
+
+/* Typing Cursor Effect */
+#intro-paragraph::after {
+    content: '|';
+    display: inline-block;
+    animation: blink 1s infinite;
+    opacity: 0; /* Initially hidden */
+    margin-left: 2px;
+}
+
+#intro-paragraph.typing::after {
+    opacity: 1; /* Visible during typing */
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+.project-item,
+.service-item {
+    margin-bottom: 2.5rem; /* Space between items in a section */
+}
+
+.project-item:last-child,
+.service-item:last-child {
+    margin-bottom: 0; /* No bottom margin for the last item */
+}
+
+.project-item h3,
+.service-item h3 {
+    font-size: 1.15rem; /* Slightly smaller headings for items */
+    font-weight: 700; /* Lato bold */
+    margin-bottom: 0.5rem;
+}
+
+.project-item p,
+.service-item p {
+    color: var(--secondary-color); /* Medium gray for item descriptions */
+    line-height: 1.6;
+} 
