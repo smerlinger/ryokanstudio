@@ -4,106 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ryokan Studio</title>
-    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body class="">
     <header>
-        <nav>
+        <div class="header-container">
+            <nav class="header-nav-links">
+                <a href="#">ECOMPORTAL</a>
+                <a href="#">NEWSLETTER</a>
+                <a href="#">YOUTUBE</a>
+              
+            </nav>
             <div class="logo">
                  <a href="/">
                     <img src="images/logo.png" alt="Ryokan Studio Logo">
                  </a>
             </div>
-        </nav>
+        </div>
     </header>
 
-    <main class="max-w-3xl mx-auto px-5 py-10">
-        <section class="intro-section">
-            <h1 class="text-4xl font-bold mb-4 leading-tight">An internet company development studio.</h1>
-            <button id="begin-button" class="
-                begin-btn /* Keep existing JS hooks if needed, or integrate into Tailwind classes */
-                inline-block px-8 py-3 /* Padding */
-                bg-emerald-500 text-gray-900 /* Colors: Emerald bg, dark text */
-                rounded-md font-semibold /* Rounded corners, bold font */
-                mt-6 mb-6 /* Margins */
-                transition-all duration-300 ease-in-out /* Smooth transition */
-                hover:bg-emerald-600 /* Darker green on hover */
-                overflow-hidden /* Keep for collapse transition */
-            ">
-                <!-- Replaced text with SVG Icon -->
-                <!-- Arrow Right Icon -->
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="inline-block" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/>
-                  </svg>
-            </button>
-            <p id="intro-paragraph" class="initially-hidden"> Everyone is an artist. We work to help you craft your art through code, commerce, and community. </p>
-            <!-- Added Reveal Button -->
-            <button id="reveal-button" class="begin-btn hidden">
-                <!-- Arrow Right Icon -->
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="inline-block" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/>
-                </svg>
-            </button>
-        </section>
+    <!-- Add Banner Image -->
+    <div class="banner-container">
+        <img src="images/banner.jpg" alt="Scenic banner image of a village by the water at dusk" class="banner-image">
+    </div>
 
-        <div id="main-content-wrapper" class="blur-content">
-            <section id="work" class="projects-section">
-                <h2>What Are Our Principles?</h2>
-                
-                <div class="project-item">
-                    <h3>Craftsmanship</h3>
-                    <p>Ryokan studio revoles around the idea of craftsmanship. Our tools are all digital, but the artist within remains the same. We believe in building products & tools that are a reflection of the values we hold within, all with the goal to share our art with the world. </p>
-                </div>
-
-                <div class="project-item">
-                    <h3>Circular Incentives</h3>
-                    <p>We build products & provide services because we know how to provide value to our customers. Our customers, in term, recieve the value that better grows their business. Their growth then fuels our growth further. This is what we mean by circular incentives. As soon as the benefits do not align, we aren't interested in the work. </p>
-                </div>
-
-                <div class="project-item">
-                    <h3>Community With Code</h3>
-                    <p>There are tons, albeit rare, examples of products or services that help bring people closer together. We have a list of all the ones we admire, and we aim to only build in the world what helps harbour human connection - not subtract from it.</p>
-                </div>
-            </section>
-
-            <section id="services" class="services-section">
-                <h2>How We Can Help...</h2>
-                
-                <div class="service-item">
-                    <h3>Strategic Development</h3>
-                    <p>From concept to launch, we partner with founders to build robust digital products and platforms.</p>
-                </div>
-
-                <div class="service-item">
-                    <h3>Growth & Scaling</h3>
-                    <p>Leveraging technology and data-driven insights to scale operations and reach new markets.</p>
-                </div>
-                
-                <div class="service-item">
-                    <h3>Consultation</h3>
-                     <p>Providing expert guidance on technology strategy, product development, and digital transformation.</p>
-                </div>
-            </section>
-        </div>
+    <main class="container">
+        <ul class="principles-list">
+            <li><span class="item-number">00.</span> <span class="item-text">Focus on the craft. Everything else is just noise.</span></li>
+            <li><span class="item-number">01.</span> <span class="item-text">Big things can be built with small teams.</span></li>
+            <li><span class="item-number">02.</span> <span class="item-text">People work best when given independence. </span></li>
+            <li><span class="item-number">03.</span> <span class="item-text">Iteration over contemplation</span></li>
+            <li><span class="item-number">04.</span> <span class="item-text">Business doesn't have to take more than it gives. Great art leaves the audience with more than it takes.</span></li>
+        </ul>
     </main>
 
     <footer>
         <div class="footer-content">
-            <div class="footer-logo">Ryokan Studio</div>
-            <div class="footer-links">
-                <ul>
-                    <li><a href="#work">Work</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="mailto:hello@ryokanstudio.com">Contact</a></li>
-                </ul>
+            <div class="footer-links-start">
+                <a href="#">2025</a>
+                <a href="#">Books</a>
+                <a href="#">Thoughts</a>
+                <a href="#">Jobs</a>
+            </div>
+            <div class="footer-links-end">
+                <a href="#">Updates</a>
+                <a href="#">Podcast</a>
+                <a href="#">Supply</a>
+                <a href="#">Dev</a>
+                <a href="#">Policies</a>
             </div>
         </div>
     </footer>
-
-    <script src="script.js?v=12345"></script>
 </body>
 </html> 

@@ -1,29 +1,29 @@
 :root {
-    --primary-color: #ffffff; /* White (for headings etc. on dark bg) */
-    --secondary-color: #a0a0a0; /* Light Gray (for secondary text) */
-    --text-color: #ffffff; /* White (for main body text) */
-    --bg-color: #1a1a1a; /* Dark Gray (from image) */
-    --light-gray: #333333; /* Darker shade for subtle elements on dark bg */
-    --border-color: #444444; /* Medium Gray for borders */
-    --container-width: 800px; /* Narrower container for minimalist look */
+    --primary-color: #ffffff; /* White */
+    --secondary-color: #a0a0a0; /* Light Gray */
+    --text-color: #ffffff; /* White */
+    --bg-color: #000000; /* Black */
+    --border-color: #333333; /* Dark Gray for borders */
+    --container-width: 960px; /* Slightly wider container */
     --base-font-size: 16px;
 }
 
 html {
-    scroll-behavior: smooth; /* Re-add smooth scroll via CSS */
+    scroll-behavior: smooth;
 }
 
 body {
-    font-family: 'Lato', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    line-height: 1.7; /* Slightly increased line-height */
+    /* Use a standard sans-serif stack */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6; /* Adjusted line-height */
     color: var(--text-color);
     background-color: var(--bg-color);
     margin: 0;
     padding: 0;
     font-size: var(--base-font-size);
-    -webkit-font-smoothing: antialiased; /* Smoother fonts */
+    -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    padding-top: 80px; /* Reduced top padding */
+    /* padding-top: 80px; */ /* Removed: Space for fixed header - Moved to main */
 }
 
 .container {
@@ -32,18 +32,15 @@ body {
     padding: 0 20px;
 }
 
-h1, h2, h3, h4, h5, h6 { /* Apply to all headings */
+h1, h2, h3, h4, h5, h6 {
     color: var(--primary-color);
     margin-top: 0;
-    margin-bottom: 1rem; /* Consistent bottom margin */
-    font-weight: 700; /* Lato bold weight */
+    margin-bottom: 1rem;
+    font-weight: normal; /* Less bold headings */
     line-height: 1.3;
 }
 
-h1 { font-size: 2.25rem; } /* Adjust sizes */
-h2 { font-size: 1.5rem; }
-h3 { font-size: 1.25rem; }
-h4 { font-size: 1.1rem; }
+/* Specific heading sizes if needed, otherwise rely on browser defaults or main content styles */
 
 a {
     color: var(--primary-color);
@@ -53,208 +50,100 @@ a {
 
 a:hover {
     color: var(--secondary-color);
-    text-decoration: none; /* No underline on hover by default */
 }
 
-/* Remove previous button styles - we'll redefine later if needed */
-button.cta-button,
-button.cta-button.primary,
-button.cta-button.secondary {
-    all: unset; /* Reset button styles */
-    /* Add specific styles later if needed */
-}
-
-/* Header - Simplify drastically */
+/* Header */
 header {
-    /* Make header fixed */
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 1000; /* Ensure it stays on top */
+    z-index: 1000;
     background-color: var(--bg-color);
-    padding: 0.75rem 0; /* Keep reduced vertical padding */
+    padding: 0.75rem 0;
     border-bottom: 1px solid var(--border-color);
 }
 
-header nav {
-    /* Remove max-width and auto margin to make nav full width */
-    /* max-width: var(--container-width); */
-    /* margin: 0 auto; */
-    padding: 0 1.5rem; /* Adjust horizontal padding as needed */
+header .header-container { /* Use a specific container class for header */
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 1.5rem;
     display: flex;
-    justify-content: space-between; /* This will push logo left, other items right if added */
+    justify-content: space-between;
     align-items: center;
 }
 
+/* Style for the new nav links */
+.header-nav-links {
+    display: flex;
+    gap: 1.5rem; /* Space between nav links */
+}
+
+.header-nav-links a {
+    font-size: 0.9rem;
+    font-weight: 500; /* Medium weight */
+    text-transform: uppercase; /* Match image */
+    letter-spacing: 0.5px;
+}
+
 .logo {
-    /* Logo is now part of the fixed header, no special position needed */
-    /* Adjust padding within the nav container if needed */
-    font-size: 1.25rem; /* Adjusted size */
-    font-weight: 600; /* Bolder */
+    /* Keep existing logo styles or adjust */
+    font-size: 1.25rem;
+    font-weight: 600;
     color: var(--primary-color);
 }
 
-/* Style for the logo image */
 .logo img {
-    height: 50px; /* Reduced logo height */
-    width: auto; /* Maintain aspect ratio */
-    display: block; /* Remove extra space below image */
+    height: 45px; /* Increased logo height */
+    width: auto;
+    display: block;
+    /* Add filter to invert if the logo is dark */
+    /* filter: invert(1); */
 }
 
-header nav ul {
-   display: none; /* Hide the old nav list for now */
+/* Main content area */
+main {
+    /* padding: 40px 0; */ /* Remove old padding */
+    padding: 80px 0 40px 0; /* Add top padding for fixed header, keep bottom padding */
 }
 
-header nav .cta-button {
-    display: none; /* Hide the old button for now */
+/* Styles for the numbered list */
+.principles-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-width: 600px; /* Constrain width like the image */
+    margin-left: auto; /* Center the list */
+    margin-right: auto;
 }
 
-/* Sections - General Reset */
-main section {
-    padding: 40px 20px; /* Reduced padding */
-    text-align: left; /* Default to left align */
-    border-bottom: 1px solid var(--border-color); /* Add separators */
-}
-
-main section:last-child {
-    border-bottom: none;
-}
-
-main section:nth-child(even) {
-    background-color: var(--bg-color); /* Remove alternating background */
-}
-
-/* Remove specific styles for old sections - we'll add new ones */
-.hero,
-.problem-section,
-.solution-section,
-.case-studies,
-.process-section,
-.pricing-section,
-.testimonials-section {
-    /* Resetting styles that might interfere */
-    padding-top: 40px;
-    padding-bottom: 40px;
-}
-
-.hero h1,
-.problem-section h2,
-.solution-section h2,
-.case-studies h2,
-.process-section h2,
-.pricing-section h2,
-.testimonials-section h2 {
-    text-align: left; /* Ensure headings are left-aligned */
-}
-
-.hero p,
-.problem-section p,
-.solution-section p,
-.case-studies p,
-.process-section p,
-.pricing-section p,
-.testimonials-section p {
-    max-width: none; /* Remove max-width constraints */
-    text-align: left;
+.principles-list li {
     margin-bottom: 1rem;
+    font-size: 1.5rem; /* Larger font size for list items */
+    line-height: 1.4;
+    display: flex; /* Use flex for number alignment */
+    align-items: baseline; /* Align baseline of number and text */
 }
 
-.problem-section .problem-points,
-.solution-section .solution-layers,
-.process-section .process-steps,
-.case-studies .studies-grid,
-.testimonials-section .testimonial-grid {
-    display: block; /* Stack elements vertically */
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
+.principles-list .item-number {
+    color: var(--secondary-color); /* Gray number */
+    font-size: 1.3rem; /* Slightly smaller number */
+    font-weight: bold;
+    min-width: 50px; /* Ensure space for two digits */
+    padding-right: 1rem;
 }
 
-.problem-section .problem-points > div,
-.solution-section .solution-layers > div,
-.process-section .process-steps > div,
-.study-card,
-.testimonial-card {
-    flex: none; /* Remove flex behavior */
-    max-width: 100%;
-    background: none; /* Remove background */
-    padding: 0; /* Remove padding */
-    margin-bottom: 1.5rem; /* Add space between stacked items */
-    border-radius: 0;
-    box-shadow: none; /* Remove shadow */
+.principles-list .item-text {
+    color: var(--primary-color); /* White text */
 }
 
-.hero .cta-button, .hero .secondary-link, /* Hide old hero buttons/links */
-.problem-section .cta-button,
-.process-section .cta-button,
-.pricing-section .cta-button {
-    display: none;
-}
-
-.hero .trusted-by {
-    margin-top: 2rem;
-}
-.hero .trusted-by .logos {
-    gap: 20px;
-}
-
-/* === New Section Styles === */
-
-.intro-section {
-    padding-bottom: 10px; /* Reduced bottom padding drastically */
-}
-
-.intro-section h1 {
-    font-size: 2rem; /* Slightly smaller H1 for intro */
-    margin-bottom: 0; /* Removed space below H1 */
-}
-
-.intro-section p {
-    font-size: 1.1rem;
-    color: var(--secondary-color); /* Use medium gray for intro text */
-    max-width: 65ch; /* Limit line length for readability */
-}
-
-.projects-section h2,
-.services-section h2 {
-    margin-bottom: 2rem; /* More space below section titles */
-}
-
-.projects-section {
-    padding-top: 1rem; /* Reduced padding-top to decrease space below intro */
-}
-
-.project-item,
-.service-item {
-    margin-bottom: 2.5rem; /* Space between items in a section */
-}
-
-.project-item:last-child,
-.service-item:last-child {
-    margin-bottom: 0; /* No bottom margin for the last item */
-}
-
-.project-item h3,
-.service-item h3 {
-    font-size: 1.15rem; /* Slightly smaller headings for items */
-    font-weight: 700; /* Lato bold */
-    margin-bottom: 0.5rem;
-}
-
-.project-item p,
-.service-item p {
-    color: var(--secondary-color); /* Medium gray for item descriptions */
-    line-height: 1.6;
-}
-
-/* === End New Section Styles === */
-
-/* Footer - Simplify */
+/* Footer */
 footer {
     background-color: var(--bg-color);
-    color: var(--secondary-color); /* Lighter text color */
+    color: var(--secondary-color);
     padding: 30px 0;
     border-top: 1px solid var(--border-color);
+    font-size: 0.9rem; /* Smaller font size for footer */
 }
 
 .footer-content {
@@ -262,170 +151,90 @@ footer {
     margin: 0 auto;
     padding: 0 20px;
     display: flex;
-    justify-content: space-between; /* Keep logo and links separate */
+    justify-content: space-between; /* Space out start/end links */
     align-items: center;
     flex-wrap: wrap;
     gap: 20px;
 }
 
-.footer-logo {
-    font-size: 1.1rem; /* Smaller footer logo */
-    font-weight: 700; /* Lato bold */
-    color: var(--primary-color);
-}
-
-.footer-links {
+.footer-links-start,
+.footer-links-end {
     display: flex;
-    gap: 20px; /* Reduced gap */
+    gap: 1rem; /* Space between footer links */
     flex-wrap: wrap;
-    justify-content: center; /* Center links if they wrap */
 }
 
-.footer-links h4 {
-    display: none; /* Hide footer section titles */
-}
-
-.footer-links ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex; /* Make links inline */
-    gap: 20px;
-}
-
-.footer-links ul li a {
+.footer-links-start a,
+.footer-links-end a {
     color: var(--secondary-color);
-    font-size: 0.9rem;
 }
 
-.footer-links ul li a:hover {
+.footer-links-start a:hover,
+.footer-links-end a:hover {
     color: var(--primary-color);
-    text-decoration: none;
 }
 
-.footer-bottom {
-    display: none; /* Hide the old footer bottom */
+/* Hide elements we don't need anymore */
+.intro-section,
+.projects-section,
+.services-section,
+#begin-button,
+#reveal-button,
+#intro-paragraph,
+#main-content-wrapper, /* Remove blur container if it exists */
+.footer-logo, /* Hide old footer logo text */
+.footer-links ul, /* Hide old footer list */
+.begin-btn /* Hide old button class */
+{
+    display: none !important; /* Use !important cautiously, but helpful for overrides */
 }
 
-/* Remove old responsive adjustments */
+/* Responsive */
 @media (max-width: 768px) {
-    /* Keep font size adjustments */
-    h1 { font-size: 2rem; }
-    h2 { font-size: 1.4rem; }
-    h3 { font-size: 1.15rem; }
+    body { padding-top: 60px; } /* Adjust padding for potentially smaller header */
+    main { padding-top: 60px; } /* Adjust main padding for smaller mobile header */
+    header .header-container { padding: 0 1rem; }
+    .header-nav-links { gap: 1rem; }
+    .header-nav-links a { font-size: 0.8rem; }
+    .logo img { height: 20px; }
 
-    /* Adjust header/footer for smaller screens if needed */
-    header nav,
-    .footer-content {
-        flex-direction: column;
-        align-items: flex-start; /* Align items to start */
-        gap: 15px;
-    }
+    .principles-list { max-width: 100%; padding: 0 1rem; }
+    .principles-list li { font-size: 1.2rem; }
+    .principles-list .item-number { font-size: 1.1rem; min-width: 40px; padding-right: 0.5rem;}
 
-    .footer-links {
-        justify-content: flex-start;
-    }
-    .footer-links ul {
-        flex-direction: column; /* Stack footer links */
-        gap: 10px;
-    }
+    .footer-content { flex-direction: column; align-items: center; gap: 15px; }
+    .footer-links-start, .footer-links-end { justify-content: center; }
 }
 
-/* Button Styling */
-.begin-btn {
-    display: inline-flex; /* Use flex to center icon easily */
-    align-items: center; /* Center icon vertically */
-    justify-content: center; /* Center icon horizontally */
-    padding: 5px 15px; /* Reduced top/bottom padding */
-    background-color: #00dfa0; /* Restore Green background */
-    color: #333333; /* Restore Dark Gray color for icon */
-    border: none;
-    border-radius: 8px; /* Curved rectangle edges */
-    cursor: pointer;
-    margin-top: 0.5rem; /* Reduced space below heading */
-    margin-bottom: 0.5rem; /* Reduced space above paragraph */
-    /* Updated transition */
-    transition: background-color 0.3s ease, opacity 0.5s ease, height 0.5s ease, margin 0.5s ease, padding 0.5s ease, transform 0.2s ease, width 0.5s ease;
-    overflow: hidden; /* Prevent content spill during transition */
-}
-
-.begin-btn:hover {
-    background-color: #00b88a; /* Darker green on hover */
-    transform: scale(1.05); /* Slight scale on hover */
-}
-
-/* General Hidden State */
-.hidden {
-    opacity: 0 !important; /* Use important to override potential conflicts */
-    pointer-events: none !important;
-    /* Make the element collapse vertically and horizontally */
-    height: 0 !important;
-    width: 0 !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    border: none !important;
-    overflow: hidden !important;
-}
-
-/* Initial state for paragraph */
-.initially-hidden {
-    opacity: 0;
-    transition: opacity 0.5s ease;
-    margin-top: 5px; /* Set precise 5px top margin */
-}
-
-.initially-hidden.visible {
-    opacity: 1;
-}
-
-/* Blur effect for main content */
-.blur-content {
-    filter: blur(8px); /* Adjust blur amount as needed */
-    transition: filter 1.5s ease-in-out; /* Slower blur transition */
-}
-
-/* Class to remove blur */
-.blur-content.unblurred {
-    filter: blur(0px);
-}
-
-/* Typing Cursor Effect */
-#intro-paragraph::after {
-    content: '|';
-    display: inline-block;
-    animation: blink 1s infinite;
-    opacity: 0; /* Initially hidden */
-    margin-left: 2px;
-}
-
-#intro-paragraph.typing::after {
-    opacity: 1; /* Visible during typing */
-}
-
-@keyframes blink {
+/* Remove any remaining specific styles for old sections/elements if they were missed */
+/* e.g., .problem-section, .solution-section, etc. */
+/* Remove button styles */
+/* Remove blur/typing effects */
+@keyframes blink { /* Keep or remove based on whether typing effect is kept */
     0%, 100% { opacity: 1; }
     50% { opacity: 0; }
 }
+/* Comment out or remove styles related to features not in the new design */
+/*
+.blur-content { ... }
+.blur-content.unblurred { ... }
+#intro-paragraph::after { ... }
+#intro-paragraph.typing::after { ... }
+*/
 
-.project-item,
-.service-item {
-    margin-bottom: 2.5rem; /* Space between items in a section */
+/* Banner Image Styles */
+.banner-container {
+    width: 100%;
+    /* Adjust max-height as desired, or remove to let width control size */
+    /* max-height: 250px; */ /* Commented out to show full height */
+    /* overflow: hidden; */ /* Removed overflow */
+    margin-bottom: 40px; /* Restored space below banner */
 }
 
-.project-item:last-child,
-.service-item:last-child {
-    margin-bottom: 0; /* No bottom margin for the last item */
-}
-
-.project-item h3,
-.service-item h3 {
-    font-size: 1.15rem; /* Slightly smaller headings for items */
-    font-weight: 700; /* Lato bold */
-    margin-bottom: 0.5rem;
-}
-
-.project-item p,
-.service-item p {
-    color: var(--secondary-color); /* Medium gray for item descriptions */
-    line-height: 1.6;
+.banner-image {
+    display: block; /* Remove extra space below image */
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    /* object-fit: cover; */ /* Removed object-fit */
+    /* object-position: bottom; */ /* Removed object-position */
 } 
