@@ -191,7 +191,6 @@ footer {
 
 /* Responsive */
 @media (max-width: 768px) {
-    body { padding-top: 60px; } /* Adjust padding for potentially smaller header */
     main { padding-top: 60px; } /* Adjust main padding for smaller mobile header */
     header .header-container { padding: 0 1rem; }
     .header-nav-links { gap: 1rem; }
